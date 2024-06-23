@@ -1,0 +1,37 @@
+.floating-input-wrapper{
+    background-color: #fafafaaa;
+    width: 90%;
+    position: absolute;
+    padding: 25px 50px;
+    left: 50%;
+    bottom: 200px;
+    transform: translateX(-50%);
+    z-index: 300;
+}
+
+.location-picker-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .latitude, .longitude{
+        width: 50%;
+        height: 48px;
+        padding: 5px;
+        margin-right: 5px;
+        border: 1px solid gray;
+    }
+}
+
+.surrounding-kilometer-container{
+
+    display: flex;
+    justify-content: center;
+    .kilometer{
+        width: 100%;
+        height: 48px;
+        padding: 5px;
+        border: 1px solid gray;
+    }
+}

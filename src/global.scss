@@ -1,0 +1,112 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
+@import "~leaflet/dist/leaflet.css";
+
+
+ion-header{
+    box-shadow: none;
+  }
+  
+  
+  .empty-space{
+    height: 120px;
+  }
+  
+  section{
+  
+    .header{
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .content-container{
+  
+      display: flex;
+      overflow: auto;
+      scrollbar-width: none; /* For Firefox */
+      -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  
+      &::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+      }
+    }
+  }
+  
+  ion-icon {
+    color: var(--ion-color-dark);
+  }
+  
+  section.nav-footer{
+  
+    ion-button{
+      width: 75px;
+  
+      &.active{
+  
+        ion-icon{
+          color: var(--ion-color-primary);
+        }
+  
+      }
+  
+      ion-icon{
+        font-size: 24px;
+        color: #333333;
+      }
+    }
+  
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 5px 0 rgba(31, 38, 135, 0.3);
+  
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 15px 5px;
+    position: absolute;
+    left: 50%;
+    z-index: 1000;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }

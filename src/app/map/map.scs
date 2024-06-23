@@ -1,0 +1,5 @@
+.map-container {
+  height: 500px; /* Adjust the height as needed */
+  width: 100%;
+  border: 1px solid black;
+}
