@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col size="8">
+        <div>
+          <span [routerLink]="''">&nleftarrow;</span>
+          <p style="text-align: center">NearByResults</p>
+        </div>
+      </ion-col>
+      <ion-col class="ion-text-end">
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <ion-title>Back Button</ion-title>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+
+  <div id="resultMap" style="width: 100%; height: 100%; z-index: 1;"></div>
+
+</ion-content>

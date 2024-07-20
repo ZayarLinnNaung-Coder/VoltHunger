@@ -1,0 +1,35 @@
+.form{
+
+    display: flex;
+    align-items: center;
+
+    input{
+        height: 48px;
+        margin-right: 5px;
+        padding: 5px;
+    }
+
+    .name{
+        width: 130px;
+    }
+
+    .latitude,.latitude{
+        width: 80px;
+    }
+}
+
+.table-container{
+    margin-top: 25px;
+    height: 80%;
+    overflow: auto;
+    table{
+        width: 100%;
+        tr{
+            height: 42px;
+            th, td{
+                padding: 0 5px;
+                text-align: left;
+            }
+        }
+    }
+}

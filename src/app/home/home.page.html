@@ -16,21 +16,21 @@
 
 <ion-content [fullscreen]="true" class="ion-padding-horizontal">
 
-  <div id="map" style="width: 100%; height: 100%; z-index: 1;"></div>
+  <div id="map" style="width: 100%; height: 95%; z-index: 1;"></div>
 
   <div class="floating-input-wrapper">
     <div class="location-picker-container">
       <input type="text" placeholder="latitude" class="latitude" [(ngModel)]="targetLat" (change)="changeLocation()">
-      <input type="text" placeholder="longitude" class="longitude" [(ngModel)]="targetLong">
+      <input type="text" placeholder="longitude" class="longitude" [(ngModel)]="targetLong" (change)="changeLocation()">
     </div>
   
     <p class="ion-text-center">AND</p>
   
     <div class="surrounding-kilometer-container">
-      <input type="number" placeholder="kilometer" class="kilometer" value="5">
+      <input type="number" placeholder="kilometer" class="kilometer" [(ngModel)]="distance">
     </div>
 
-    <ion-button expand="full">Find</ion-button>
+    <ion-button expand="full" (click)="onFindingNearby()">Find</ion-button>
   </div>
 
   <section class="empty-space"></section>
@@ -42,19 +42,7 @@
     <ion-icon slot="icon-only" name="home-outline"></ion-icon>
   </ion-button>
 
-  <ion-button fill="clear"  [routerLink]="'/search'">
-    <ion-icon slot="icon-only" name="search-outline"></ion-icon>
-  </ion-button>
-
-  <ion-button fill="clear" [routerLink]="'/fav'">
-    <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
-  </ion-button>
-
-  <ion-button fill="clear" [routerLink]="'/singers'">
-    <ion-icon slot="icon-only" name="people-outline"></ion-icon>
-  </ion-button>
-
-  <ion-button fill="clear" [routerLink]="'/setting'">
+  <ion-button fill="clear" [routerLink]="'/home/add-stations'">
     <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
   </ion-button>
 

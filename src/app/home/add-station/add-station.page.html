@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col size="8">
+        <p style="text-align: center">Add Stations</p>
+      </ion-col>
+      <ion-col class="ion-text-end">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+
+  <div class="form">
+    <input type="text" placeholder="name" class="name" [(ngModel)]="name" >
+    <input type="text" placeholder="lat" class="latitude" [(ngModel)]="lat" >
+    <input type="text" placeholder="lng" class="latitude" [(ngModel)]="lng" >
+    <ion-button (click)="submitLocation()">Submit</ion-button>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Lat</th>
+        <th>Lng</th>
+      </tr>
+      <tr *ngFor="let l of locationList">
+        <td>{{l.name}}</td>
+        <td>{{l.lat}}</td>
+        <td>{{l.lng}}</td>
+      </tr>
+    </table>
+  </div>
+
+</ion-content>
+
+<section class="nav-footer">
+  <ion-button fill="clear" [routerLink]="'/home'">
+    <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear" class="active" [routerLink]="'/home/add-stations'">
+    <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+  </ion-button>
+
+</section>
