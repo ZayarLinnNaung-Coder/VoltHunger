@@ -36,6 +36,7 @@ export class AddStationPage {
     location.lng = this.lng;
 
     this.locationService.addNewlLocations(location).subscribe(result => {
+      console.log(result)
       this.fetchAllLocation();
     })
   }

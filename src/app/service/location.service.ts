@@ -24,6 +24,7 @@ export class LocationService {
 
   addNewlLocations(newLocation: Location){
     const url = `${UrlConstants.BASE_URL}/locations`
+    console.log(url)
     return this.http.post(url, newLocation)
   }
 
