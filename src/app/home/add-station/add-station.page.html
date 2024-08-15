@@ -5,7 +5,7 @@
       <ion-col>
       </ion-col>
       <ion-col size="8">
-        <p style="text-align: center">Add Stations</p>
+        <h4 style="text-align: center">Add Stations</h4>
       </ion-col>
       <ion-col class="ion-text-end">
       </ion-col>
@@ -16,11 +16,25 @@
 
 <ion-content [fullscreen]="true" class="ion-padding-horizontal">
 
-  <div class="form">
-    <input type="text" placeholder="name" class="name" [(ngModel)]="name" >
-    <input type="text" placeholder="lat" class="latitude" [(ngModel)]="lat" >
-    <input type="text" placeholder="lng" class="latitude" [(ngModel)]="lng" >
-    <ion-button (click)="submitLocation()">Submit</ion-button>
+  <div class="add-station-form">
+    <div class="lat-lng-group">
+      <div class="input-group">
+        <p>Latitude</p>
+        <input type="text" placeholder="lat" class="latitude" [(ngModel)]="lat" >
+      </div>
+      <div class="input-group">
+        <p>Longitude</p>
+        <input type="text" placeholder="lng" class="longitude" [(ngModel)]="lng" >
+      </div>
+    </div>
+
+    <div class="input-group">
+      <p>Name</p>
+      <input type="text" placeholder="name" class="name" [(ngModel)]="name" >
+    </div>
+    
+    <button class="submitBtn" (click)="submitLocation()">Submit</button>
+
   </div>
 
   <div class="table-container">
@@ -40,13 +54,15 @@
 
 </ion-content>
 
+
+
 <section class="nav-footer">
   <ion-button fill="clear" [routerLink]="'/home'">
-    <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+    <ion-icon slot="icon-only" name="search-outline"></ion-icon>
   </ion-button>
 
   <ion-button fill="clear" class="active" [routerLink]="'/home/add-stations'">
-    <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+    <ion-icon slot="icon-only" name="options-outline"></ion-icon>
   </ion-button>
 
 </section>

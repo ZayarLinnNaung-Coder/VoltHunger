@@ -18,32 +18,42 @@
 
   <div id="map" style="width: 100%; height: 95%; z-index: 1;"></div>
 
-  <div class="floating-input-wrapper">
+  <div class="floating-input-wrapper" *ngIf="showPicker">
+
+    <p class="ion-text-center" style="margin-bottom: 35px;">Choose Your Desire Area</p>
+
     <div class="location-picker-container">
-      <input type="text" placeholder="latitude" class="latitude" [(ngModel)]="targetLat" (change)="changeLocation()">
-      <input type="text" placeholder="longitude" class="longitude" [(ngModel)]="targetLong" (change)="changeLocation()">
+      <div style="margin-right: 5px;">
+        <p>latitude</p>
+        <input type="text" placeholder="latitude" class="latitude" [(ngModel)]="targetLat" (change)="changeLocation()">
+      </div>
+      <div style="margin-left: 5px;">
+        <p>Longitude</p>
+       <input type="text" placeholder="longitude" class="longitude" [(ngModel)]="targetLong" (change)="changeLocation()">
+      </div>
     </div>
   
-    <p class="ion-text-center">AND</p>
-  
     <div class="surrounding-kilometer-container">
+      <p>Parameter</p>
       <input type="number" placeholder="kilometer" class="kilometer" [(ngModel)]="distance">
     </div>
 
-    <ion-button expand="full" (click)="onFindingNearby()">Find</ion-button>
-  </div>
+    <div class="btn-wrapper">
+      <button class="cancelBtn" (click)="onCancel()">Cancel</button>
+      <button class="findNearByBtn" (click)="onFindingNearby()">Find</button>
+    </div>
 
-  <section class="empty-space"></section>
+  </div>
 
 </ion-content>
 
 <section class="nav-footer">
   <ion-button fill="clear" class="active" [routerLink]="'/home'">
-    <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+    <ion-icon slot="icon-only" name="search-outline"></ion-icon>
   </ion-button>
 
   <ion-button fill="clear" [routerLink]="'/home/add-stations'">
-    <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+    <ion-icon slot="icon-only" name="options-outline"></ion-icon>
   </ion-button>
 
 </section>

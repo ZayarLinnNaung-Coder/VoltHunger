@@ -4,6 +4,7 @@ import * as L from 'leaflet';
 import * as Leaflet from 'leaflet';
 import { NearbyFindRequest } from '../domain/NearbyFindRequest';
 import { Router } from '@angular/router';
+import { LocationService } from '../service/location.service';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,8 @@ export class HomePage implements OnDestroy{
   targetLong: number = 96.1496;
   distance: number = 5;
 
+  showPicker: boolean = false
+
   newIcon = L.icon({
     iconUrl: '/assets/images/me.webp',
     iconSize: [48, 48], // Size of the icon
@@ -27,7 +30,7 @@ export class HomePage implements OnDestroy{
     popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
   });
 
-  constructor(private navCtrl: NavController, private router: Router) { }
+  constructor(private navCtrl: NavController, private router: Router, public locationService: LocationService) { }
 
   ionViewDidEnter() {
 
@@ -45,7 +48,7 @@ export class HomePage implements OnDestroy{
   
   private onMapClick(e: L.LeafletMouseEvent): void {
     const { lat, lng } = e.latlng;
-    console.log(`Clicked at ${lat}, ${lng}`);
+    this.showPicker = true;
     
     this.targetLat = lat;
     this.targetLong = lng
@@ -58,6 +61,7 @@ export class HomePage implements OnDestroy{
   }
 
   changeLocation() {
+    console.log("HELLO")
     this.pointOnMap({lat: this.targetLat, lng: this.targetLong})
   }
 
@@ -80,6 +84,10 @@ export class HomePage implements OnDestroy{
 
     localStorage.setItem('NearbyFindRequest', JSON.stringify(request))
     this.router.navigate(['home/nearby-results'])
+  }
+
+  onCancel(){
+    this.showPicker = false
   }
 
 }

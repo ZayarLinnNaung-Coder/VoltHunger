@@ -24,14 +24,14 @@ export class NearByResultPage implements OnDestroy {
 
   stationIcon = L.icon({
     iconUrl: '/assets/images/station.png',
-    iconSize: [48, 48], // Size of the icon
+    iconSize: [38, 38], // Size of the icon
     iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
     popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
   });
 
   nearestStationIcon = L.icon({
     iconUrl: '/assets/images/nearestStation.png',
-    iconSize: [28, 48], // Size of the icon
+    iconSize: [52, 52], // Size of the icon
     iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
     popupAnchor: [0, -32] // Point from which the popup should open relative to the iconAnchor
   });

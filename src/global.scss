@@ -40,8 +40,8 @@
 
 
 ion-header{
-    box-shadow: none;
-  }
+  box-shadow: none !important;
+}
   
   
   .empty-space{
@@ -82,7 +82,7 @@ ion-header{
       &.active{
   
         ion-icon{
-          color: var(--ion-color-primary);
+          color: #FF9502;
         }
   
       }
@@ -93,20 +93,14 @@ ion-header{
       }
     }
   
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 1px 5px 0 rgba(31, 38, 135, 0.3);
-  
-    border-radius: 15px;
+    background: #ffffff;
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     padding: 15px 5px;
     position: absolute;
     left: 50%;
     z-index: 1000;
-    bottom: 20px;
+    bottom: 0px;
     transform: translateX(-50%);
   }

@@ -18,9 +18,45 @@
     }
 }
 
+.add-station-form{
+
+    .input-group{
+        width: 100%;
+        .latitude, .longitude, .name{
+            width: 100%;
+            height: 48px;
+            padding: 0 10px;
+            border: 1px solid #777;
+            outline: none;
+            border-radius: 10px;
+        }
+
+    }
+
+    .lat-lng-group{
+
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .input-group{
+            width: 170px !important;
+        }
+    }
+}
+
+.submitBtn{
+    width: 100%;
+    height: 48px;
+    background-color: #FF9502;
+    color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
 .table-container{
     margin-top: 25px;
-    height: 80%;
+    height: 50%;
     overflow: auto;
     table{
         width: 100%;

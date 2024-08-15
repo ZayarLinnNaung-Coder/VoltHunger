@@ -1,12 +1,35 @@
 .floating-input-wrapper{
-    background-color: #f0f0f0aa;
-    width: 90%;
+    width: 100%;
     position: absolute;
-    padding: 25px 50px;
+    padding: 25px;
     left: 50%;
-    bottom: 150px;
+    bottom: 75px;
     transform: translateX(-50%);
     z-index: 300;
+    background: #ffffff;
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0px -3px 15px -3px rgba(0,0,0,0.1);
+    
+    .btn-wrapper{
+
+        display: flex;
+        justify-content: space-between;
+
+        .findNearByBtn{
+            width: 48%;
+            height: 48px;
+            color: white;
+            background-color: #FF9502 !important;
+            border-radius: 10px;
+        }
+    
+        .cancelBtn{
+            width: 45%;
+            height: 48px;
+            background-color: #fafafa !important;
+            border-radius: 10px;
+        }
+    }
 }
 
 .location-picker-container{
@@ -16,22 +39,22 @@
     align-items: center;
 
     .latitude, .longitude{
-        width: 50%;
+        width: 100%;
         height: 48px;
         padding: 5px;
-        margin-right: 5px;
+        border-radius: 10px;
         border: 1px solid gray;
     }
 }
 
 .surrounding-kilometer-container{
 
-    display: flex;
-    justify-content: center;
     .kilometer{
+        border-radius: 10px;
         width: 100%;
         height: 48px;
         padding: 5px;
         border: 1px solid gray;
+        margin-bottom: 25px;
     }
 }
