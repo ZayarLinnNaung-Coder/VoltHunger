@@ -19,6 +19,7 @@ export class HomePage implements OnDestroy{
 
   targetLat: number = 16.7984;
   targetLong: number = 96.1496;
+  errorMessage: string = "";
   distance: number = 5;
 
   showPicker: boolean = false
@@ -34,15 +35,7 @@ export class HomePage implements OnDestroy{
 
   ionViewDidEnter() {
 
-    L.Icon.Default.imagePath = '/assets/images/';
-
-    this.map = new Leaflet.Map('map').setView([this.targetLat, this.targetLong], 16);
-
-    Leaflet.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-      attribution: 'edupala.com'
-    }).addTo(this.map);
-
-    this.map.on('click', this.onMapClick.bind(this));
+    this.getLocation();
 
   }
   
@@ -88,6 +81,49 @@ export class HomePage implements OnDestroy{
 
   onCancel(){
     this.showPicker = false
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position: GeolocationPosition) => {
+          this.targetLat = position.coords.latitude;
+          this.targetLong = position.coords.longitude;
+
+          L.Icon.Default.imagePath = '/assets/images/';
+
+          this.map = new Leaflet.Map('map').setView([this.targetLat, this.targetLong], 16);
+
+          Leaflet.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: 'edupala.com'
+          }).addTo(this.map);
+
+          this.map.on('click', this.onMapClick.bind(this));
+
+
+          this.pointOnMap({ lat: this.targetLat, lng: this.targetLong });
+
+        },
+        (error: GeolocationPositionError) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              this.errorMessage = "User denied the request for Geolocation.";
+              break;
+            case error.POSITION_UNAVAILABLE:
+              this.errorMessage = "Location information is unavailable.";
+              break;
+            case error.TIMEOUT:
+              this.errorMessage = "The request to get user location timed out.";
+              break;
+            default:
+              this.errorMessage = "An unknown error occurred.";
+              break;
+          }
+        }
+      );
+    } else {
+      this.errorMessage = "Geolocation is not supported by this browser.";
+    }
   }
 
 }
