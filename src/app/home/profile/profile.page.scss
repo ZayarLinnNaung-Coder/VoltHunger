@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    align-items: center;
+    img{
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .info{
+        p{
+            padding: 0;
+            margin: 0;
+        }
+        .name{
+
+        }
+        .phone-number{
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+        .edit{
+            font-size: 13px;
+        }
+    }
+}

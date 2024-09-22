@@ -7,6 +7,9 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { NearByResultPage } from './nearby-result/nearby-result.page';
 import { AddStationPage } from './add-station/add-station.page';
+import { PaymentPage } from './payment/payment.page';
+import { LoyalityPage } from './loyality/loyality.page';
+import { ProfilePage } from './profile/profile.page';
 
 
 @NgModule({
@@ -16,6 +19,6 @@ import { AddStationPage } from './add-station/add-station.page';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, NearByResultPage, AddStationPage]
+  declarations: [HomePage, NearByResultPage, AddStationPage, PaymentPage, LoyalityPage, ProfilePage]
 })
 export class HomePageModule {}

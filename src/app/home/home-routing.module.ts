@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
 import { NearByResultPage } from './nearby-result/nearby-result.page';
 import { AddStationPage } from './add-station/add-station.page';
+import { PaymentPage } from './payment/payment.page';
+import { LoyalityPage } from './loyality/loyality.page';
+import { ProfilePage } from './profile/profile.page';
 
 const routes: Routes = [
   {
@@ -16,6 +19,18 @@ const routes: Routes = [
   {
     path: 'add-stations',
     component: AddStationPage,
+  },
+  {
+    path: 'loyality',
+    component: LoyalityPage,
+  },
+  {
+    path: 'payment',
+    component: PaymentPage,
+  },
+  {
+    path: 'profile',
+    component: ProfilePage,
   }
 ];
 @NgModule({
